@@ -1,0 +1,7 @@
+# Python >= 3.11. Install: python -m pip install -r requirements.txt
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+shapely>=2.0
+# Only for convert_docs_to_docx.py
+python-docx>=1.1

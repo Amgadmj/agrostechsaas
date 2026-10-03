@@ -1,0 +1,71 @@
+{
+  "benchmark_name": "Value-of-Information Drone Trigger Dispatch",
+  "farm_parameters": {
+    "area_ha": 1000.0,
+    "credit_exposure_brl": 3500000.0,
+    "crop_cycle_days": 120,
+    "monte_carlo_iterations": 100
+  },
+  "policies": {
+    "Agrostech VoI Dispatch": {
+      "policy_name": "Agrostech VoI Dispatch",
+      "net_economic_value_per_ha_brl": {
+        "mean": 661.36,
+        "std": 508.87,
+        "p10": 121.67,
+        "p90": 1191.79
+      },
+      "flight_cost_per_ha_brl": {
+        "mean": 63.9,
+        "std": 6.21
+      },
+      "loss_prevented_per_ha_brl": {
+        "mean": 725.25
+      },
+      "mean_flight_count": 11.2,
+      "mean_detection_latency_days": 4.24,
+      "false_escalation_rate_pct": 49.75,
+      "early_intervention_capture_pct": 63.75
+    },
+    "Fixed Calendar (14d)": {
+      "policy_name": "Fixed Calendar (14d)",
+      "net_economic_value_per_ha_brl": {
+        "mean": 440.66,
+        "std": 391.62,
+        "p10": 4.22,
+        "p90": 1023.93
+      },
+      "flight_cost_per_ha_brl": {
+        "mean": 45.6,
+        "std": 0.0
+      },
+      "loss_prevented_per_ha_brl": {
+        "mean": 486.26
+      },
+      "mean_flight_count": 8.0,
+      "mean_detection_latency_days": 6.0,
+      "false_escalation_rate_pct": 58.88,
+      "early_intervention_capture_pct": 47.0
+    },
+    "Naive NDVI Threshold": {
+      "policy_name": "Naive NDVI Threshold",
+      "net_economic_value_per_ha_brl": {
+        "mean": 435.45,
+        "std": 449.92,
+        "p10": -62.7,
+        "p90": 1059.83
+      },
+      "flight_cost_per_ha_brl": {
+        "mean": 81.0,
+        "std": 9.17
+      },
+      "loss_prevented_per_ha_brl": {
+        "mean": 516.44
+      },
+      "mean_flight_count": 14.2,
+      "mean_detection_latency_days": 8.67,
+      "false_escalation_rate_pct": 70.32,
+      "early_intervention_capture_pct": 49.25
+    }
+  }
+}

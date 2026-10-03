@@ -1,0 +1,7 @@
+# Replace @agrostech/cto with the CTO's GitHub handle or team after creating the repo.
+*                       @agrostech/cto
+/src/lib/dossier/       @agrostech/cto
+/src/lib/sar/           @agrostech/cto
+/src/middleware.ts      @agrostech/cto
+/src/lib/supabase/      @agrostech/cto
+/supabase/              @agrostech/cto

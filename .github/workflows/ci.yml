@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      # CI runs the app in demo mode: no external keys, fixtures only.
+      NEXT_PUBLIC_DEMO_MODE: "true"
+      INTEGRITY_MODE: demo
+      ALLOW_MOCK_FALLBACK: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests (tiered suite)
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+  adversarial:
+    name: adversarial (informational)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Known P1 defects make this exit 1 today (docs/05-quality/KNOWN_ISSUES.md).
+    # Remove continue-on-error once they are fixed.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run test:adversarial

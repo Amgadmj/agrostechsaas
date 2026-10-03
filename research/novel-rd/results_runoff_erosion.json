@@ -1,0 +1,79 @@
+{
+  "benchmark_name": "Uncertainty-Aware Probabilistic SCS-CN Monte Carlo",
+  "parameters": {
+    "catchment_area_ha": 50.0,
+    "grid_dimensions": [
+      100,
+      100
+    ],
+    "cell_size_m": 7.071,
+    "design_rainfall_mm": 85.0,
+    "sigma_base_m": 0.25,
+    "correlation_length_m": 20.0,
+    "monte_carlo_iterations": 500
+  },
+  "models": {
+    "Agrostech Probabilistic SCS-CN": {
+      "model_name": "Agrostech Probabilistic SCS-CN",
+      "ohmr_pct": 0.0,
+      "far_pct": 33.33,
+      "spatial_brier_score": 0.0291,
+      "earthmoving_savings_pct": 20.36,
+      "excavation_volume_m3": 26958.5
+    },
+    "Single-Run Deterministic SCS-CN": {
+      "model_name": "Single-Run Deterministic SCS-CN",
+      "ohmr_pct": 100.0,
+      "far_pct": 33.33,
+      "spatial_brier_score": 0.089,
+      "earthmoving_savings_pct": 0.0,
+      "excavation_volume_m3": 33849.4
+    },
+    "Deterministic Rational Method": {
+      "model_name": "Deterministic Rational Method",
+      "ohmr_pct": 0.0,
+      "far_pct": 100.0,
+      "spatial_brier_score": 0.5005,
+      "earthmoving_savings_pct": -17.84,
+      "excavation_volume_m3": 39886.9
+    }
+  },
+  "terraces_evaluation": [
+    {
+      "terrace_id": "TERRACE_01",
+      "row_idx": 22,
+      "length_m": 707.1,
+      "capacity_m3": 6500.0,
+      "ground_truth_overtopping": 0,
+      "single_run_prediction": 0,
+      "agrostech_prob_overtopping": 0.25
+    },
+    {
+      "terrace_id": "TERRACE_02",
+      "row_idx": 44,
+      "length_m": 707.1,
+      "capacity_m3": 10000.0,
+      "ground_truth_overtopping": 1,
+      "single_run_prediction": 0,
+      "agrostech_prob_overtopping": 0.794
+    },
+    {
+      "terrace_id": "TERRACE_03",
+      "row_idx": 66,
+      "length_m": 707.1,
+      "capacity_m3": 16000.0,
+      "ground_truth_overtopping": 0,
+      "single_run_prediction": 1,
+      "agrostech_prob_overtopping": 0.354
+    },
+    {
+      "terrace_id": "TERRACE_04",
+      "row_idx": 88,
+      "length_m": 707.1,
+      "capacity_m3": 22000.0,
+      "ground_truth_overtopping": 0,
+      "single_run_prediction": 0,
+      "agrostech_prob_overtopping": 0.238
+    }
+  ]
+}
