@@ -30,7 +30,7 @@
     "@tmcw/togeojson": "^6.0.0",
     "cesium": "^1.146.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.49.0",
+    "lucide-react": "^1.58.0",
     "maplibre-gl": "^6.14.0",
     "next": "^15.1.7",
     "react": "^19.0.0",
